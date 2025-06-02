@@ -1,0 +1,42 @@
+{% url 'login' as login %}
+{% url 'register' as register %}
+{% url 'logout' as logout %}
+
+
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+
+    <a href="#" class="navbar-brand">May Store</a>
+
+    <button type="button" name="button" class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navb">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navb">
+
+    <ul class="navbar-nav ml-auto">        
+    {% if user.is_authenticated %}
+    
+        <li class="nav-item ">
+                <a href="{{ logout }}" class="nav-link">
+                    <span class="fas fa-sign-in-alt"></span>
+                    Logout</a>
+            </li>
+    {% else %}
+    
+        
+            <li class="nav-item">
+                <a href="{{ login }}" class="nav-link">
+                    <span class="fas fa-user"></span>
+                    Login</a>
+            </li>
+            
+            <li class="nav-item ">
+                <a href="{{ register }}" class="nav-link">
+                    <span class="fas fa-user-plus"></span>
+                    Registro</a>
+            </li>
+    {% endif %}  
+        </ul>
+    </div>
+</nav>  
+   

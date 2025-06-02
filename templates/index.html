@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+        <div class="row">
+            <div class="col">
+
+                {% if messages %}
+                  {% for message in messages %}
+                    <div class="alert {%if message.tags == 'success'%}alert-success{%else%}alert-danger{%endif%}">
+                        <button type="button" classe="close" data-dimiss="alert">x</button>
+                        {{ message }}
+                    </div>
+                  {% endfor %}
+                {% endif %}
+                    <h1>{{ message }}</h1> {# {{}} esto sirve para poder mostrar variables, imprimir mejor dicho #}
+                    <ul class="list-group">
+                      
+                  {% for product in products%} 
+                  <li class="list-group-item">
+                    {{ product.name }} 
+                    
+                      
+                      <span class= "text-success"> ${{product.price}}</span>
+                      
+                      
+                      
+                  </li>
+                  
+                  {% endfor%}  
+                  </ul>
+        </div>
+    </div>
+        {% endblock %}

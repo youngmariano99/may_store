@@ -1,0 +1,38 @@
+# Archivos generados por Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Entorno virtual
+env/
+venv/
+
+# Configuración y archivos sensibles
+*.env
+db.sqlite3
+media/
+logs/
+secrets.json
+
+# Archivos de dependencias y caché
+pip-log.txt
+pip-delete-this-directory.txt
+poetry.lock
+
+# Archivos de Django y migraciones
+*.log
+staticfiles/
+*.sqlite3
+migrations/**/__pycache__/
+
+# Archivos de IDEs y sistemas operativos
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Archivo de cobertura de pruebas
+.coverage
+htmlcov/
